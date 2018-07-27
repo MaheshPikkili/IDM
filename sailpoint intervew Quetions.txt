@@ -362,7 +362,7 @@ we can add event-based lifecycle management to automatically trigger access chan
 6) Alert
 Certifications
 --------------
-Event-Based Certifications — certify the entitlement information for the identities selected based on
+Event-Based Certifications Â— certify the entitlement information for the identities selected based on
 events detected within IdentityIQ.
 
 3) What are the differences between IdentityIQ version 6.4 and IdentityIQ version 7?
@@ -387,7 +387,7 @@ Then, each of the 5 entitlements can be provisioned as its approval gets complet
 4) Which are the target systems that you are aware of?
 -------------------------------------------------------
 
-Ldap , Active Directory, jdbc
+Ldap , Active Directory, JDBC
 
 5)Which OOTB connectors have you worked before?
 
@@ -420,10 +420,10 @@ identity scans can detect and report on policy violations and trigger event cert
 2)Run an Identity Refresh task with the Process Event option enabled to trigger the life cycle events for 
 any changes detected since the last time the events were processed.
 
-3)Refresh assigned, detected roles and promote additional entitlements — Creates provisioning requests
+3)Refresh assigned, detected roles and promote additional entitlements Â— Creates provisioning requests
 for IdentityIQ to add roles to identity cubes.
 
-4)Provision assignments — Creates provisioning requests that apply to external applications.
+4)Provision assignments Â— Creates provisioning requests that apply to external applications.
 
 5)Synchronize attributes--provision the identity mapping targets if thier values have changed
 
@@ -544,7 +544,7 @@ WEB-INF/classes folder of each instance, or in the location specified in iiq.pro
 
 To select the newly created key, use 2. If multiple keys are in the keystore, use any available higher
 number.
-• To select the original default key use 1 or nothing.
+Â• To select the original default key use 1 or nothing.
 
 18)Explain the Deployment process in general?
 
@@ -657,14 +657,14 @@ ANS:
 1. How can we develop Custom Task?
 
 Ans: If you have any requirement for which you have to create a custom task with custom attribute then you can follow the below steps, 
-In our XML file Executor must be fully qualified name of our custom class and the the custom task type should be Generic type, template="true" is set to get the TaskDefinition listed in “New Task” List . Our custom class should extends  sailpoint.task.AbstractTaskExecutor and override the method to implement our logic These are the methods from superclass we have to provide the our logic in this methods 
+In our XML file Executor must be fully qualified name of our custom class and the the custom task type should be Generic type, template="true" is set to get the TaskDefinition listed in Â“New TaskÂ” List . Our custom class should extends  sailpoint.task.AbstractTaskExecutor and override the method to implement our logic These are the methods from superclass we have to provide the our logic in this methods 
 
  public void execute(SailPointContext paramSailPointContext, TaskSchedule paramTaskSchedule,
                                         TaskResult paramTaskResult, Attributes<String, Object> paramAttributes) 
 
       2.    public boolean terminate() 
 
- Compile the class file and copy it inside “\webapps\identityiq\WEB-INF\classes\sailpoint\custom\task and restart the tomcat
+ Compile the class file and copy it inside Â“\webapps\identityiq\WEB-INF\classes\sailpoint\custom\task and restart the tomcat
 
 2. Have you work Custom report?
 
@@ -847,7 +847,7 @@ Ans: Simply it will gives error called Unknown object:  ,   so you have to selec
 Ans: Connector server is a container which contains the connectors . It can be used for different reasons like , to connect to proprietary system that are not fully accessible from environment and, Connector servers are also used to reach resources that are not reachable over the network, Connector server may also be used for security that placing a connector server near the target resource may provide better security than direct communication.
 
 49.What is the logical application ?
-Ans:A Logical application is defined based on the combination of attributes found on one are more existing identityiQ application referred as ‘tires’.Logical application accounts are not pulled from External Environment.Logical accounts are created by examining identities.  
+Ans:A Logical application is defined based on the combination of attributes found on one are more existing identityiQ application referred as Â‘tiresÂ’.Logical application accounts are not pulled from External Environment.Logical accounts are created by examining identities.  
 
 Yogesh hcl interview
 ---------------------
