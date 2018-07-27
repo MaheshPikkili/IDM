@@ -1,0 +1,979 @@
+TCS
+----
+1) what is the difference between source mapping and target mapping?
+Ans:
+source mapping is the way to map iiq attributes(either ootb or extended) with application level attributes.
+target mapping is the way to map iiq attributes to target attributes, it directly sync changes in target by iiq change
+
+
+2) Explain the apporval process in lcm provisioning?
+ANS:approve and provision subprocess
+
+
+
+3) what is use of deltaAggregation task in ad or jdbc?
+Ans: delta aggrregation is process to aggragate only those accounts/identities  which are changed from last aggregation
+In AD dirsync,usnchange options are available
+in jdbc need to create separate table and trigger(need to give sql query of table) and we have to trigger the events
+
+
+
+4) what is the difference between Disable optimization of unchanged accounts and Delta Aggregation ?
+Ans: delta aggrregation: is process of which are changed from last aggregation
+     Disable optimization of unchanged accounts:Every account should be aggregated even if it is unchanged since the last aggregation
+	
+5) have you worked on the birth right provisioning ? explain it?
+yes,
+>Create provisioning plan object
+>Get identity object by using sailpoint context
+>Check the condition 
+>create two list object (acct request linst and object request list)
+>create account request object
+>set operation and application to account request and add attributes(new attributwe request) to it and set native identity.
+>set operation and application to object request and add attributes(new attributwe request) to it and set native identity.
+>we add this account and object request to created list and this list has to  
+
+6) how to configure the birth right provisiong workflow?
+ans:By workflow
+    By Role based 
+
+7) how to configure the ad application?
+Ans: we have get IQ servicehost and IQ serviceport and we have to provide  domain configration by giving username,passsword and port and account and group search DN's.
+
+9) how many outofbox connectors have you woked on?
+Ans; AD,LDAP,JDBC,Delimited
+
+10) have you worked on provisioning policy? exaplain?
+Ans:Application Provisioning Policy,Role Provisioning Policy.
+
+11) how to request entitlement to partucular user for ad?
+Ans:Manage User Access
+
+12) what is use of search dn in ad configuartion?
+Ans:Filtering and fetching the data Purpose
+
+13) how many domains configured in ad app?
+Ans:4 to 5
+SDG
+----
+1) Certification process ?
+Ans:Genaeration,Staging,Active,Challenge,Signoff,Remedation/Revocation,End.
+
+2) what is the difference among manager, application and advance certification explain?
+Manger:To certify the manager and his subordinates 
+Application:To certify the Accounts in a particular application
+Advance Certification:Using groups and populations in certification and certify those accounts 
+
+3) have you worked on reports and have you created custom reports?
+
+4) have you worked on quicklinks and have you created custom quicklinks?
+
+5) what is patching ? which patching have you done ? explain procedure how to do it?
+Ans:No
+
+6) have you worked on upgrading the version ? explain it ?
+Ans: yes
+
+7) what is the use of iiq.properties file ?
+Ans:To configere the database Details,Logging and server info.
+ 
+8) what is the use of log4j.properties ?
+Ans:Loging purpose
+.fatal
+.debug
+.error
+.warning
+.info
+.trace
+
+9) have you created the custom forms ? 
+Ans:  
+
+10) how you provide the user friendly errors messages at the time of forms created ?
+Ans: Excetion handling and Alerts. 
+
+11) have you worked on roles ?
+Ans:yes,
+Role mining:IT role mining,Business Role mining
+
+12) what is the difference among connectors and aggregation rules ? explain it?
+Ans:Connector rule work before aggregation,at the time of connction and connector rules are connector specfic(Delimited,JDBC,SAP,HRMS) 
+    Aggregation rules during aggregation these are not connector specific.
+
+13) have you worked on the birth right provisioning ? explain it from scratch ?
+ANS:Code
+
+14) explain about AD what you worked on AD in your project ?
+ANS:I Used as target  system to provision 
+
+15) have you worked on jdbc connector ? explain procedure of configure how you done ?
+ANS:yes,
+    First we have to get connection details(Connection User,Password,url,jdbc driver),SQL Object Query,Get Object SQL,Then We have to provide Correlation if necessary,Rules and account aggregation to fetch accounts,account group aggregation to fetch groups.
+
+16) how many types of application have you onboarded ?
+ANS: AD,LDAP,JDBC,Delimited
+
+17) have you worked on correlation ? explain how types of correlation are there in iiq and explain?
+ANS:yes,
+Account Correlation
+Manager Correlation
+Identity correlation
+
+Apart from this we can provide correlations through  rule:Correlation,Manager Correlation
+
+18) what is the difference among application attribute and account attribute and identity attribute explain it ?
+Ans:Identity Attr:Which come from the trusted source
+    Account Attr:Which come from targets
+    Application:Entire iiq 
+
+20) what queries were you wrote for configure the jdbc connector ? explain it ?
+Ans: Select * from users
+     Use joins and triggers to fetch data afrom the multiple tables
+
+21) explain about ssb ?
+Ans:Extract SSB-place ExportsScrips.txt in Webinf/bin-Create Export folder in bin-then run SOURCE EXPORTSCRIPT.TXT command in cmd-place all custom object in respective folders in config folder
+    then we have to edit iiq.prop,server etc files in ssb,then we have to place the iiq.war zip file in base/ga-then we have BUILD WAR cimmand in bin. 
+
+22) on what basis have you created provisioning policies ?
+Ans:
+
+23) predeligation and exclusion rule ?
+Ans:Deligate the certification items to sub ordinates to review their own access.
+    Exclusion:To exclude some items,Accounts from generating certification 
+
+24) connector configuration (delimited, jdbc, ad, ldap)
+Ans:
+
+
+
+
+1.Job Change
+ANs:
+2.Job Transfer
+
+3.diff b/w job change and job transfer
+
+4.provisioning plan
+ANS:plan contains the list of requested changes to an identity.
+
+5.if one identity is entered into iiq how many plans will be created
+ANS: only 1.
+
+6.How many lifeCycle events in sailpoint
+Ans:Joiner,leaver,Reinstate,mover.
+
+7.Custom quicklinks
+Ans:
+8.Tell me one scenario for Roles u created in previous
+ANS:
+9.Difference between Business and IT role
+ANS:Brole is used to represent jobFunction/Job titles
+    ITRole is used to hold the entitlements
+10.AD Configuration
+Ans:we have get IQ servicehost and IQ serviceport and we have to provide  domain configration by giving username,passsword and port and account and group search DN's.
+
+11.How many aggregation rules
+ANS:Customization rule,Correlation,manager Correlations,creation,managed Entitlement/promotion .              
+
+12.Difference between Customization and Map to resource object rules
+Ans:Map to resource object rules are connector specific and this is used to convert map to resource object return:resource object
+    customization rule is used to customize the build resourse object this is aggregation rule return:Customized resource object
+
+13.What is BuildMap rule
+Ans:to manipulate  the raw input data(cols & rows) into a map object
+    To change the schema attribute   
+
+14.What is provisioning policy
+Ans:Provisioning policy contains set of attributes /fields which are needed to complete a provisioning request 
+whether the request is to create/update/modify/add role
+
+15.What are the policies u created
+ANS:Role SOD,entitlement SOD,account,Risk,Activity,Advanced
+16.Have u used sailpoint.api?
+ANS:
+17.What is Dynamic Scope
+ANS:The scope of quicklink who can access
+
+
+
+
+1. Explain about CustomQuicklinks?
+
+2. what is DynamicScope?
+ANS:The scope of quicklink who can access
+
+3. How to Configure EmailTemplates?
+ANS:Global settings-iiq configaration-mail settings
+
+4. User defined exceptions? Where you used in your project?
+ANS:
+
+5. How to set cookies?
+Ans:create a cookie object and we have to add cookies by using addCookies().
+8rule you customized?
+ANS:
+7. Custom form
+ANS:
+8. complete Proviosioning plan
+ANS:plan contains the list of requested changes to an identity.
+
+9. after provision plan what will happen
+ANS:then after provisioning compiler compiles plan and creates  provisioning project  it contains splitted plans based that each address a single application and each plan is passed into appropriate handlers. 
+
+10. Roles you worked on and created
+ANS:
+11. Which application server, web server and their versions
+ANS:TOMCAT 8.5,
+12. AD configuration
+Ans: we have get IQ servicehost and IQ serviceport and we have to provide  domain configration by giving username,passsword and port and account and group search DN's.
+
+13. convert logs into xml format
+ANS:XMLobjectFactory.getinstance.toXML()
+    This is sailpoint.tools.xml
+ 
+14. policies you worked on, explain role and entitlement and account policies
+ANS:Role SOD,entitlement SOD,account,Risk,Activity,Advanced
+    RoleSOD:To Ensure that the identities does not conflict with roles
+    EntitlementSod:To Ensure that the identities does not conflict with some Entitlements.
+    Account Policy:To ensure that the identites does not have multiple accounts in a single application.
+
+15. setup logging path
+ANS:debug-logging-log4g properties
+16. build process
+Ans:Extract SSB-place ExportsScrips.txt in Webinf/bin-Create Export folder in bin-then run SOURCE EXPORTSCRIPT.TXT command in cmd-place all custom object in respective folders in config folder
+    then we have to edit iiq.prop,server etc files in ssb,then we have to place the iiq.war zip file in base/ga-then we have BUILD WAR cimmand in bin. 
+17. Quicklink options
+ANS:For self,For others
+18. How to onboard 100 flat files using one configuration
+ANS:Multiplex application
+19. send approve link to manager make sure appore could be done by link only
+ANS:
+20. differnce bw 6.4 and 7.1 (detailed/internal), which version you are working now
+ANS:
+21. collections in java
+
+
+
+1) How are you going to onboard 100 delimited files using single application?
+ANS:multiplexer application
+
+2) Workflow having multiple approvals?
+ANS:
+3) Birthright provisioning?
+ANS:
+4) Have you worked on JDBC connector, explain about it?
+ANS:yes,
+    First we have to get connection details(Connection User,Password,url,jdbc driver),SQL Object Query,Get Object SQL,Then We have to provide Correlation if necessary,Rules and account aggregation to fetch accounts,account group aggregation to fetch groups.
+
+5) Consider a dummy application & it is showing a test connection as successful
+	how will you get a Application object?
+ANS:context.getObjectByName(Application.class,"Application name");
+
+6) Tell me a scenario of buildmap rule have u worked?
+ANS:To modify email of identities.
+
+7)Difference between Account aggregation and group aggregation?
+ANS:Account aggregation scans the application information and it loads users and entielments and it correlate users and entitlements
+    Account group aggregation scans the appllication details and aggregate  account  groups and application group attributes used for group certification and displaying group information.
+   
+8)Approving a account/group of a certification directly by getting a link in an email? 
+ANS:
+9)Why do we use getObject Sql query in jdbc connector?
+ANS:To get /iterate a single identity
+
+
+1)explain about reinstate lifecycle event?
+ANS:
+2)connection parameters for jdbc?
+ANS:yes,
+    First we have to get connection details(Connection User,Password,url,jdbc driver),SQL Object Query,Get Object SQL,Then We have to provide Correlation if necessary,Rules and account aggregation to fetch accounts,account group aggregation to fetch groups.
+
+3)Explain about birthwrite provisoning?
+
+4)how can u set time to expire for workitem?
+ANS:
+
+5)explain about refresh identity cube task?
+ANS:refresh identity cube task is used to refresh the identity cube datails like policy ,history,snapshot,rules and it will trigger the wf,to assign roles etc. 
+
+6)why we write getObject sql query in jdbc configuration?
+ANS:To fetch / iterate a single identity
+
+7)Explain about DeltaAggregation in delimited and jdbc?
+ANS:
+
+8)differtienate all certifications?
+
+9)why we run refresh identity cube task?
+ANS:refresh identity cube task is run to refresh the identity cube datails like policy ,history,snapshot,rules and it will trigger the wf,to assign roles etc.
+
+10)have you used for each loop in any rules?
+ANS:
+11)explain connection code for jdbc application?
+ANS:yes,
+    First we have to get connection details(Connection User,Password,url,jdbc driver),SQL Object Query,Get Object SQL,Then We have to provide Correlation if necessary,Rules and account aggregation to fetch accounts,account group aggregation to fetch groups.
+
+12)tell me scnerio of buildmap rule have u worked?
+ANS:
+13)how many rules in iiq?explain aggregation rules?
+ANS:Connector rules,aggregation rules,Provisioning rules,Certification rule
+    Aggregation rules:
+    -Customization rule
+    -correlation rule
+    -manager correlation rule
+    -creation rule
+    -managed entitlement/promotion
+ 
+14)how many outofbox connectors are there?
+ANS:AD,JDBC,Delimited,LDAp
+
+15)how to onboard 10 applications at a time?
+ANS:Multiplexer connector
+Tcs Interview Questions
+
+1) What is Identity and Access Management?
+---------------------------------------
+
+SailPoint IdentityIQ is an identity and access management solution for enterprise applications that delivers a wide variety
+of IAM processes-including automated access certifications, policy management, access request and provisioning,
+password management, and identity intelligence. Furthermore, IdentityIQ has a flexible connectivity model that simplifies the 
+management of applications running in the datacenter or the cloud.
+
+importance
+-----------
+Today there are many  products available  in the market providing IDM solution to enterprise applications.
+Then what is new about the Sailpoint IdentityIQ?
+
+Existing IDM products are IT focused and their efficiency mostly depends upon the IT helpdesk and the IT technical team.
+Sailpoint aims at shifting more and more Identity & access processes from the IT technical team to the end users
+so that the dependency is as less as possible on the technical team.
+So we can say this product is more of Business focused as compared to other IDM products which are IT focused.
+It has a single use interface as compared to the existing IDM products having multiple interfaces with multiple contexts.
+
+2) What are the lifecycle events in IAM?
+--------------------------------------
+To further simplifying user on-boarding, off-boarding, and other job changes within the enterprise, 
+we can add event-based lifecycle management to automatically trigger access changes based on HR or other authoritative feeds.
+1) create
+2) Atribute Change
+3) Manager Transfer
+4) Native Chanage
+5) Rule
+6) Alert
+Certifications
+--------------
+Event-Based Certifications — certify the entitlement information for the identities selected based on
+events detected within IdentityIQ.
+
+3) What are the differences between IdentityIQ version 6.4 and IdentityIQ version 7?
+-----------------------------------------------------------------------------------
+Version 7.0 introduced the option to split the provisioning plan into individual line-item components
+during the approval process, 
+
+For example, version 6.4
+-------------------------
+if the requester selected 5 entitlements together
+in the cart, the provisioning of all 5 entitlements would occur at once, and only after the approvals for
+all 5 entitlements had been completed. If one entitlement's owner was slow to respond, the other 4
+entitlements would also have to wait to be provisioned until the fifth was approved or rejected.
+
+In version 7.0,
+--------------- 
+the workflow can be configured to split the provisioning plan (the cart) into its component pieces
+at any step in the approval process. If, for example, the approvalScheme is "manager,owner", the
+manager approval could be left as one unit, but the owner approval could be processed per owner.
+Then, each of the 5 entitlements can be provisioned as its approval gets completed.
+
+4) Which are the target systems that you are aware of?
+-------------------------------------------------------
+
+Ldap , Active Directory, jdbc
+
+5)Which OOTB connectors have you worked before?
+
+Deleimeted file , jdbc, ladp(oud), Active Directory
+
+6) Describe the steps for installing IdentityIQ.
+------------------------------------------------
+
+Step1:Take identity iq war file deploye in webapps identityiq folder
+Step2: extract the identityiq war file by using the command jar -xvf identityiq.war enter 
+then generating files
+Step3: then navigate to bin and generate the script file by using command iiq schema
+Step4: then navigate to database login to mysql db then enter user name and password
+Step5: and create the iiq tables by using command source create_identityiq_tables.mysql
+Step6: verify the script files by using command use identityiq; and show tables and its shown 204 tables
+Step7: then navigate to bin directory then type iiq console and load the identityiq xml object by using command import init.xml
+Step8: generating xml files
+Step9: and also configure the lcm manager by using command import init_lcm.xml
+Sten10: finally start the tomcat and login the application by using localhost:8080/identityiq
+
+7)  What is refresh task and why it is needed?
+-----------------------------------------------
+1 Task are used to automate the processes which build, update, and maintain the information contained within IdentityIQ.
+
+Identity refresh task
+----------------------
+IT is analyze the information collected for each identity to ensure that it is up-to-date and accurate. Among other things,
+identity scans can detect and report on policy violations and trigger event certifications.
+
+2)Run an Identity Refresh task with the Process Event option enabled to trigger the life cycle events for 
+any changes detected since the last time the events were processed.
+
+3)Refresh assigned, detected roles and promote additional entitlements — Creates provisioning requests
+for IdentityIQ to add roles to identity cubes.
+
+4)Provision assignments — Creates provisioning requests that apply to external applications.
+
+5)Synchronize attributes--provision the identity mapping targets if thier values have changed
+
+
+8)What is Group, Work Group and Population?
+
+Groups
+------
+These are statically defined based off a single Identity attribute.
+so thats way Run the task: Refresh Groups
+we have to generate some groups based on the following Identity Attributes
+we defined these Identity Attributes as group factories earlier when we defined the identity mappings
+We will also be using rules to assign ownership to each group.
+These groups can be used in reporting
+
+Population
+----------
+use Advanced Analytics to define some populations based on specific criteria. 
+Populations are similar to groups, except that they are driven off of multiple
+search criteria whereas Groups are statically defined based off a single Identity attribute.
+
+Groups and Populations are used for filtering in a number of places in the product. 
+One of those is in reporting. Here we will run a report using a Group to narrow down the results
+
+Work Group
+----------
+defining group of identities as a particular applcation owner
+
+9)What is RBAC?
+-------------------
+Managing access of users using Roles in sailpoint is RBAC(Role Based Access Control)
+
+10)  What is Policy Violation?
+------------------------------
+
+Policies are defined and used to monitor identities that are in violation of the policies.  
+
+11) What is Entitlement or Permissions?  
+---------------------------------------  
+Entitlement
+-----------
+An entitlement is either a specific value for an account attribute, most commonly group membership, or a permission.
+
+Entitlements fall into two categories: Permissions and Attributes. 
+A Permission is a privilege, such as create, read, update, delete, and execute.
+Attributes are customized user characteristics made up of an attribute/value pair, such as group/Administrators.
+
+14)What are Detected and Assigned roles?
+Business roles are Assigned roles
+----------------------------------
+IdentityIQ supports role mining to create both business and IT roles. 
+Business role mining in IdentityIQ facilitates the creation of organizational groupings based on identity attributes, for example department, cost center or job title
+
+IT roles roles are detected role
+--------------------------------
+IT roles typically model how application entitlements (or permissions) are logically grouped for streamlined access.  
+
+15)How to onboard Active Directory?
+------------------------------------
+Step1: define new application
+step2: given name, select owner, select correspoding conntector like active directoty
+step3: configuration
+step4: settings 
+iqservice host:
+iqserviceport 5050    
+
+step5: domain configauration
+
+  domain,user,password,server    
+
+step6: account :search dn for accounts cn=users,dc idm, dc=in
+step7: groups:search dn for groups dc=idm, dc=in 
+step 8: test connection 
+step 9: object type account
+native object type :user
+identity attribute: distiguishedName
+DisplayAttribute: samAccountName
+
+native object type :group
+same like above
+select member of to entitlement and managed   
+
+run the account group aggregation taks 
+
+16) What is SSL? 
+Secure socket layer is a standard security protocol for enrypted links between a web server and browser in an online communication
+
+17) How to import the Certificate to KeyStore?
+
+Key Creation
+-------------
+To create or manage the keystore: navigate to the WEB-INF/bin folder and start the IdentityIQ KeyStore console with the keystore command:
+1.Navigate to the WEB-INF/bin folder and start the IdentityIQ Keystore console with the keystore command
+iiq keystore
+> addKey ?
+Generate a new encryption key (y/n)? ?
+y ?
+Generating a new encryption key for keystore?
+[/var/tomcat/webapps/access governance suite/WEB-INF/classes/spt.dat]. ?
+New encrpytion key successfully saved to keystore. ?
+All application servers must be restarted for changes to take effect. ?
+>
+The list command displays the newly created key:
+> list ?
+Listing contents for keystore?
+[/var/tomcat/webapps/iiq6/WEB-INF/classes/iiq.dat]. ?
+KeyAlias Algorithm Format Object ?
+?
+2 AES RAW javax.crypto.spec.SecretKeySpec@fffe81cd ?
+>
+
+By default the files are stored in the following location:
+keystorePassword = WEB-INF/classes/iiq.cfg ?
+keystore = WEB-INF/classes/iiq.dat
+
+If you run more than one instance of IdentityIQ, you must place the following files in the
+WEB-INF/classes folder of each instance, or in the location specified in iiq.properties.
+
+To select the newly created key, use 2. If multiple keys are in the keystore, use any available higher
+number.
+• To select the original default key use 1 or nothing.
+
+18)Explain the Deployment process in general?
+
+ANS:       Extract SSB-place ExportsScrips.txt in Webinf/bin-Create Export folder in bin-then run SOURCE EXPORTSCRIPT.TXT command in cmd-place all custom object in respective folders in config folder
+           then we have to edit iiq.prop,server etc files in ssb,then we have to place the iiq.war zip file in base/ga-then we have BUILD WAR cimmand in bin. 
+
+19.        What are Custom Reports and Custom Task?
+ANS:       
+
+20.        What is lifecycle events in IdentityIQ?
+ANS:      To further simplifying user on-boarding, off-boarding, and other job changes within the enterprise, 
+          we can add event-based lifecycle management to automatically trigger access changes based on HR or other authoritative feeds.
+          1) create
+          2) Atribute Change
+          3) Manager Transfer
+          4) Native Chanage
+          5) Rule
+          6) Alert
+
+21.       Explain the steps for SailPoint upgrade?
+ANS:      
+
+22.       How to add new extended attribute into SailPoint objects?
+ANS:      first we have to add new extended attribute in IdentityExtended.hbm then we have to add that attribute name in objectConfig in debug.  
+
+23.        What is Capabilities, Rights and Dynamic Scopes?
+ANS:       Capabilities:Identities having particular rights
+           Rights:We can perform only those specific activities
+           Scope:to limit the objects to which capabilities are applied
+
+24.        What is Quicklink and Quicklinkoptions?
+Ans:       Quicklink are shortcuts/to perform quick actions to perform internal ,exteranal,workflows
+           Quicklink options are to self,to others the scope of quicklink
+  
+25.        What is the difference between Account and Group Aggregation?
+ANS:       Account aggregation scans the application information and it loads users and entielments and it correlate users and entitlements
+           Account group aggregation scans the appllication details and aggregate  account  groups and application group attributes used for group certification and displaying group information.
+
+26.        What is Delta Aggregation? Explain with an example.
+ANS:       Delta aggregation is used to aggregate only those accounts which are changed since the last aggregation.
+
+27.        What is Partition? Explain with an example.
+ANS:       if we have lot of identites to aggregate then it makes the server loaded then those identities are splitted into parts called instances then those are aggregated separetely as threads this is called partitioning.
+
+28.        What is Workflowcase, Taskresult and Workitems and how are they related?
+ANS:       workflowCase:It is created to manage and track the progress of provisioning activities.
+           TaskResults:once we run any task that task results are shown in taskResult Object .
+           Workitems:A workitem is anything that requires an action before it completes.it can be a accessreviews,piece of process like approval for one entitlement of an application.
+
+29.        What is Batch Requests?
+ANS:       
+
+30.        What is Certifications? What are the different kinds of Certifications?
+ANS:       Certification is to review and approve access privilages
+           MANAGER CERTIFICATION
+           APPLICATION OWNER CERTIFICATION
+           ENTITLEMENT OWNER CERTIFICATION
+           ADVANCED CERTIFICATION 
+
+31.        What is Exclusion and Pre- Delegation rule? Explain with an example.
+ANS:       
+
+32.        What is Pass-through Authentication?
+ANS:       pass through authentication:it works only to those connector types which consists AUTHENTICATE in feature string 
+           When we specify pass through authentication then any identities coming from target application not in iiq then those identity accounts are created.        
+
+33.        What is Password Interceptor?
+ANS:       Password intersept is nothing but when ever we change the password in target system (AD IBM)it sync the password to  all target system of a particular identity. 
+
+34.        What is Custom Auditing?
+
+35.        How to do E-Mail Configuration in IdentityIQ?
+
+36.        What is Identity Correlation? What are the different types of Correlation?
+ANS:       Account Correlation
+           Manager Correlation
+           Identity correlation:to correlate the uncorrelated accounts with correleted account
+
+           Apart from this we can provide correlations through  rule:Correlation,Manager Correlation
+
+37.        Explain the Provision implementation of any Connector.
+
+38.        How to implement Custom Logging?
+
+39.        How to update the E-Mail templates to support different languages?
+ANS:       
+40.        How to enable LCM?
+ANS:       init-lcm.xml
+
+41.        What is JIRA? How to create different types of JIRA ticket?
+ANS:       
+42.        How to create the Branches in BitBucket?
+
+43.        What are the different Branch types?
+
+44.        Describe the steps involved for Code Check-out using SSH/HTTP.
+
+45.        Describe the steps involved for Code Check-in to Repository.
+
+46.        How to create Pull Requests? How will you merge the code with the respective release branches?
+
+47.        How to do Bamboo Deployment?
+
+48.        How to check the logs in CIDM Servers?
+
+49.        How to start and stop the CIDM Services?
+
+
+
+1. How can we develop Custom Task?
+
+Ans: If you have any requirement for which you have to create a custom task with custom attribute then you can follow the below steps, 
+In our XML file Executor must be fully qualified name of our custom class and the the custom task type should be Generic type, template="true" is set to get the TaskDefinition listed in “New Task” List . Our custom class should extends  sailpoint.task.AbstractTaskExecutor and override the method to implement our logic These are the methods from superclass we have to provide the our logic in this methods 
+
+ public void execute(SailPointContext paramSailPointContext, TaskSchedule paramTaskSchedule,
+                                        TaskResult paramTaskResult, Attributes<String, Object> paramAttributes) 
+
+      2.    public boolean terminate() 
+
+ Compile the class file and copy it inside “\webapps\identityiq\WEB-INF\classes\sailpoint\custom\task and restart the tomcat
+
+2. Have you work Custom report?
+
+Ans: customer-specific reports developed by or specifically for a single customer through a custom TaskDefinition specification.In IdentityIQ, a report is essentially executed as a specialized task The root element of a report is a <TaskDefinition> element. The executor specifies which class processes this task definition to run the report.
+
+DataSource: is used for retrieving the data from the database to reports by using the query and we can specify the query in three ways i.e JavaDatasource,HQl,Filter. In this three data sources Filter is easy and most commonly used one.Next common datasource is java datasource . Java datasource class must implement sailpoint.reporting.datasource.JavaDataSource interface, and we have to provide the implementation for all 10 methods  and HQl is another datasource it is used in rare circumstances. This should be used when the report developer well known about HQL. 
+
+3. Custom workflow
+
+4. Explain Birthright provisioning using workflow ?
+
+5. What is provisioning project
+Ans: Compiled version of provisioning plan is provisioning project.
+
+6. In provisioning plan how many objects are there?
+Ans: Provisioning plan itself is object which is returned at the end of provisioning.In this we will use two object called AccountRequest and AttributeRequest.
+
+7.What is Propagation task?
+Ans: If some roles are pending for the identities. So to promote this we are propagating the roles to identities. 
+
+8. Sequential Task Launcher
+Ans: It can be defined as for running multiple task sequentially in order as defined. We can schedule as per our execution frequency. Here we have to select the tasks which we created already.
+
+9. Before provisioning rule & After provisioning rule
+Ans: Before provisining plan is used to give the ability to react to anything in proviosioning plan before the reqests are sent to underlying connector.
+     After provisining plan is used to give the ability to react to anything in proviosioning plan that has been sent to application after the provisioning request has been proceed.
+
+10. Exclusion rule
+Ans: It is a type of certification rules which is used for skipping or excluding some of identities based on our requirement at the time of certification generation ex. Inactive identities,If not managers.  etc.
+
+11. Customization rule
+Ans: It is aggregation type of rules which is used for customizing the identity details for next process in the iiq.
+
+12. Escalation rule
+Ans: It is a type of certification rules which is used for the escalating the work items to higher persons if the original certifier is not available to review the certification. ex. Manager is in leave so escalate the work item to higher.
+
+13. Manager certification 
+Ans: It is a type of certifications which is used to sending the certification to selected managers only. Here whoever the persons under that manager comes into work items of the certification. 
+
+14. Advanced policy
+Ans: A policy which is created for our requirement other than Out of the box policy which was given by iiq. 
+
+15. Account policy
+Ans: A policy which is used for differentiate the more than one accounts should not be there in the same applications.
+
+16. Business role mining & IT role mining
+Ans: Business role mining means mining the job functions like regions or locations which are presented in iiq.
+     IT Role mining means mining of entitlements presented in iiq and make it as a IT Role.
+
+17. Tell me one scenario for creating roles in your industry?
+18. What is the language used for provisioning project?
+Ans: bean shell scripting .
+
+19. What is the language for email templates ?
+Ans: apache velocity language 
+
+20. Workgroups?
+Ans: Workgroup can be defined as providing user capabilities or rights to the identities.
+
+21. Fallback approver ?
+Ans: the approver which comes into picture when original certifier is not there. Like original certifier is not available then the work item will escalate to fallback approver.
+
+22. Groups & populations?
+Ans: Groups are differentiate the users based on single attribute . Population can be differentiate the users based on more than one attribute  
+
+23. How to schedule a task in every day night ?
+Ans: we can schedule the task in everyday night by using one option in task called schedule the task as per execution frequency (select the task and right click then we will get schedule option.)
+
+24. What are the day to day activities in your company ?
+
+25. What is build map rule ?
+Ans: it is a type connector rules which is used for manipulate the raw input data and build a map out of the incoming data. This rule is used for delimited connectors application.
+
+26. Aggregation flow ?
+Ans: 
+
+27. Onboarding application ?
+
+28. How to create a manual work item ?
+Ans:When we override the provisioning transactions or when ever there is unmanaged plans then those come into manual workitems 
+29. Filters ?
+Ans:
+
+30. In jdbc provisioning rule ?
+
+31. Tables in database ?
+
+32. If you forgot spadmin password what you should do ?
+ANS:open iiq console then encrypt "password" then copy the encrypted password and update that password in database (spt_identity)
+
+33. How to add & delete  member in population ?
+ANS:when ever any population is created then we add any new member with the same criteria of the population created then the identity is automatically added/deleted from the population.
+
+34. What is the use of perform maintenance task ?
+ANS: it Prune identity snapshots, task results, and certifications. Perform other background maintenance tasks.
+        
+35. What is provisioning policy ?
+ANS:Provisioning policy contains set of attributes /fields which are needed to complete a provisioning request 
+whether the request is to create/update/modify/add role
+
+36. Provision with retries workflow ?
+
+37. How to trigger a workflow using quicklink ?
+ANS: we have to set quick link action=Workflow and in the attribute in map we have to create key value in key we have to provide workflow and value we have to provide workflow name.
+38. Configuration of AD ?
+ANS: we have get IQ servicehost and IQ serviceport and we have to provide  domain configration by giving username,passsword and port and account and group search DN's.
+39. What is IQ service ?
+ANS:IQ service is a windows native server which is used to connect our iiq to windows envinorment 
+    first we have to configure IQ service in ad server system by using a command 
+    >IQservice.exe -i ----install
+    >IQservice.exe -s ----start
+    >IQservice.exe -k ----stop
+    
+40. What is Approval Scheme ?
+ANS:Approval scheme is nothing but we provide different approvers who is responsible to approve the workitems
+    >Fallback
+    >owner
+    >manager
+    >identity
+
+41. Assigning an application through roles ?
+ANS:
+
+42. Capabilities in Workgroup ?
+
+Ans:
+Access Manager
+Alert administrator
+Application administrator
+Auditor
+Batch request administrator
+Business role administrator
+Certification administrator
+Compliance Manager 
+Entitlement administrator
+Entitlement property administrator
+Entitlement Role administrator
+Form Administrator 
+Full access admin console 
+Help Desk Admin 1
+Help Desk Personal
+Identity Administrator
+Identity Correlation Administrator
+Identity Request Administrator
+IT Role Administrator
+Organizational Role Administrator
+Password Administrator 
+Plugin Administrator
+Policy Administrator
+Role Administrator
+Rule Administrator
+SCIM Executor
+Signoff Administrator
+Syslog Administrator
+System Administrator
+Task Results Viewer
+Web Services Executor
+WorkGroup Administrator
+Work Item Administrator
+43. UI Customizations ?
+44. By default custom report executor path ?
+Ans:	sailpoint.reporting.LiveReportExecutor
+45.  What is the difference b/w Managed & Entitlement ?
+Ans:	 If u check Entitlement Then u r referring that particular attribute has entitlements in it. If u check Managed 
+Entitlement Then entitlements present in that attribute will be displayed in the "entitlement catalog".
+
+This mean u r telling iiq that "this attribute contains entitlements in it n u need to read them to cube, can use them"
+
+
+46.  What is the difference readonly and permanent and temporary of edit mode in identity mapping ?
+Ans:	readonly: if you put this option we can not be edit the attribute value. We can read it only.
+	Permanent : if you use this option , then we can edit this value and whatever we gave new value that is fixed, 
+Previous value will not override the  new value which what we gave after doing aggregation and refresh
+	Temporary : if we use this option , then we can edit the value of attribute and whatever we gave new value is that is temporary which means after we done aggregation and refresh it will override by previous value
+
+47.After aggregation of one application if you edit the name of the application then, if you try to execute the same aggregation task what will happen ?
+Ans: Simply it will gives error called Unknown object:  ,   so you have to select the application which you edited explicitly for executing the task
+
+48. What is connector server ? 
+Ans: Connector server is a container which contains the connectors . It can be used for different reasons like , to connect to proprietary system that are not fully accessible from environment and, Connector servers are also used to reach resources that are not reachable over the network, Connector server may also be used for security that placing a connector server near the target resource may provide better security than direct communication.
+
+49.What is the logical application ?
+Ans:A Logical application is defined based on the combination of attributes found on one are more existing identityiQ application referred as ‘tires’.Logical application accounts are not pulled from External Environment.Logical accounts are created by examining identities.  
+
+Yogesh hcl interview
+---------------------
+1)df bw provisioning plan and provisioning policy?
+Ans:provisioning plan contains the list of requested changes to an identity
+    provisioning policy contains the set of attribute or fields which are needed to comnplete a provisioning request.The request can be create update delete or add role .
+
+2)what is use of provisioning policy?
+Ans:provisioning policy contains the set of attribute or fields which are needed to comnplete a provisioning request.The request can be create update delete or add role .
+
+3)where u configure provisioning policy ?
+ANS:In application defination provisioning policy and in global setting forms and we can create forms and that form reference can be used. 
+
+4)without provisioning policy can i do provision?
+yes
+
+5)have u created any  provisioning plan?
+yes
+
+6)why u need provisioning policy?
+ANS:
+
+7)have u customized any existed workflow?
+
+
+8)how birthright provisioning will trigger?
+ANS:If we specify the birthright in joiner life cycle event and When ever the new identity enters into iiq then if the attribute is same as the attribute specified in wf in birth right provisioning
+
+9)how do you do role based birthright provisioning?
+ANS:we have to create a role and in that we have to provide assignment rule (/match list,rule,script,filter,population) so that if any identity match with the assignment rule then that role will be assigneed to tha t identity .
+
+10)integration of jdbc connector how do u configured delta aggregation in jdbc application?
+ANS:First we have to get connection details(Connection User,Password,url,jdbc driver),SQL Object Query,Get Object SQL,Then We have to provide Correlation if necessary,Rules and account aggregation to fetch accounts,account group aggregation to fetch groups.
+    n jdbc need to create separate table and triggers(need to give sql query of table) and we have to trigger the events
+
+11)while i performing delta agg from where it pickuping data?
+ANS:
+
+12)account request vs object request?
+ANS:Account request:Represent a request for one application
+    Object Request:represent a request for objects(groups)
+
+13)i have custom form one field tye identity type having many identities i want to populate only for active identities?
+ANS:
+
+14)what is a searchable attribute?
+ANS:Extended attribute can be designated as a searchable,this attributes can be used to filtering and this attribute store the implementation of a specific data of several Object types(link,bundle,application,certification item,.managed attribute,identities)
+
+15)how many searchable attributes default for identity or link or bundle?
+ANS:                SERCHABLE      INDEXED
+    
+    IDENTITY------------10         5
+    Certification item--5          1
+    LINK----------------5          1
+    BUNDLE--------------4          1
+    APPLICATION---------4          1
+    MANAGED ATTRIBUTE---3          3
+    
+16)how do you create searchable attributes?
+ANS:webinf/classes/sailpoint/object/.hbm     files----Here we can add some piece of code 
+
+for identityExtended.hbm----- <property name="costCenter" type="string" length="450"
+  access="sailpoint.persistence.ExtendedPropertyAccessor"/>
+
+17)what is actual responsibility in project?
+
+
+----------------------------------------------
+
+1.What is Quicklinks ? How to add a custom quicklink tell me the total procedure ?
+ANS:
+2.What is Dynamic Scope ?
+ANS:
+3. What is Quicklink populations ?
+ANS:
+4. What is Application object ?
+ANS:
+5. What is SVN tool?
+ANS:
+6. I upgraded 6.3 to 6.4, but iqservice is not upgraded at that time what should you do?
+ANS:
+7. What is JDBC Configuration ?
+ANS:
+8. How to onboard 3 delimited files at a time without using logical and multiplexed ?
+ANS:
+9. How to check code in sailpoint ?
+ANS:
+10. Where you store the .class files ?
+ANS:
+11. If you use java files you have to use one jar file what is that jar ?
+ANS:
+12. In one workgroup i added 10 members how to add that workgroup into capabilities ?
+ANS:
+13. What is birthright provisioning plan ?
+ANS:
+14. What is refresh identity cube ?
+ANS:
+15. In refresh identity cube by default some checkboxes are enabled what is that ?
+ANS:
+16. What is foreground provisioning and background provisioning ?
+ANS:
+17. how to add multiple approvers in workflow ?
+ANS:
+18. What is Fallback approver ?
+ANS:
+19. Have u use any custom task tell me scenario?
+ANS:
+20. What is connector registry?
+ANS:
+21. Tell me one scenario for roles ?
+ANS:
+22. What is your previous project description ?
+ANS:
+23. Onboarding one delimited file how much time will u take ?
+ANS:
+24. How many members in your previous project ?
+ANS:
+25. Explain Connector and aggregation rules ?
+ANS:
+26. What is account and group aggregation ?
+ANS:
+27. Have u worked any custom forms?
+ANS:
+28. What are log levels ?
+ANS:
+29. If i want to warn one file that is print or not ?
+ANS:
+30. If any modifications in log file how it is reflected into ur iiq ?
+ANS:
